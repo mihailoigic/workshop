@@ -1,12 +1,17 @@
-import logo from './assets/img/cslogo.png';
+
+import GamesDescription from './components/GamesDescription.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Root from './components/Root.js';
 
 function App() {
   return (
-    <div>
-      <header>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <>
+    <Router>
+      <Route path={"/"} component={Root} exact={true} />
+      <Route path={"/games"} component={GamesDescription} />
+    </Router>
+    </>
   );
 }
 
